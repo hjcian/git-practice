@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if ! test -d .git; then
+    echo "Execute scripts/install-git-hooks in the top-level directory."
+    exit 1
+fi
+ln -sf ../../scripts/commit-msg.py .git/hooks/commit-msg || exit 1
+chmod +x .git/hooks/commit-msg
+
+echo
+echo "commit-msg.py is installed successfully."
