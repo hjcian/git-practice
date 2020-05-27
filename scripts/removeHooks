@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if ! test -d .git; then
+    echo "Execute scripts/install-git-hooks in the top-level directory."
+    exit 1
+fi
+
+rm .git/hooks/pre-commit
+rm .git/hooks/commit-msg
+
+echo
+echo "Remove Git hooks successfully."
